@@ -1,0 +1,488 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.23 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+
+
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.09 sec)
+
+mysql> use sys;
+Database changed
+mysql> show tables;
++-----------------------------------------------+
+| Tables_in_sys                                 |
++-----------------------------------------------+
+| host_summary                                  |
+| host_summary_by_file_io                       |
+| host_summary_by_file_io_type                  |
+| host_summary_by_stages                        |
+| host_summary_by_statement_latency             |
+| host_summary_by_statement_type                |
+| innodb_buffer_stats_by_schema                 |
+| innodb_buffer_stats_by_table                  |
+| innodb_lock_waits                             |
+| io_by_thread_by_latency                       |
+| io_global_by_file_by_bytes                    |
+| io_global_by_file_by_latency                  |
+| io_global_by_wait_by_bytes                    |
+| io_global_by_wait_by_latency                  |
+| latest_file_io                                |
+| memory_by_host_by_current_bytes               |
+| memory_by_thread_by_current_bytes             |
+| memory_by_user_by_current_bytes               |
+| memory_global_by_current_bytes                |
+| memory_global_total                           |
+| metrics                                       |
+| movie                                         |
+| processlist                                   |
+| productions                                   |
+| ps_check_lost_instrumentation                 |
+| schema_auto_increment_columns                 |
+| schema_index_statistics                       |
+| schema_object_overview                        |
+| schema_redundant_indexes                      |
+| schema_table_lock_waits                       |
+| schema_table_statistics                       |
+| schema_table_statistics_with_buffer           |
+| schema_tables_with_full_table_scans           |
+| schema_unused_indexes                         |
+| session                                       |
+| session_ssl_status                            |
+| statement_analysis                            |
+| statements_with_errors_or_warnings            |
+| statements_with_full_table_scans              |
+| statements_with_runtimes_in_95th_percentile   |
+| statements_with_sorting                       |
+| statements_with_temp_tables                   |
+| sys_config                                    |
+| user_summary                                  |
+| user_summary_by_file_io                       |
+| user_summary_by_file_io_type                  |
+| user_summary_by_stages                        |
+| user_summary_by_statement_latency             |
+| user_summary_by_statement_type                |
+| version                                       |
+| wait_classes_global_by_avg_latency            |
+| wait_classes_global_by_latency                |
+| waits_by_host_by_latency                      |
+| waits_by_user_by_latency                      |
+| waits_global_by_latency                       |
+| x$host_summary                                |
+| x$host_summary_by_file_io                     |
+| x$host_summary_by_file_io_type                |
+| x$host_summary_by_stages                      |
+| x$host_summary_by_statement_latency           |
+| x$host_summary_by_statement_type              |
+| x$innodb_buffer_stats_by_schema               |
+| x$innodb_buffer_stats_by_table                |
+| x$innodb_lock_waits                           |
+| x$io_by_thread_by_latency                     |
+| x$io_global_by_file_by_bytes                  |
+| x$io_global_by_file_by_latency                |
+| x$io_global_by_wait_by_bytes                  |
+| x$io_global_by_wait_by_latency                |
+| x$latest_file_io                              |
+| x$memory_by_host_by_current_bytes             |
+| x$memory_by_thread_by_current_bytes           |
+| x$memory_by_user_by_current_bytes             |
+| x$memory_global_by_current_bytes              |
+| x$memory_global_total                         |
+| x$processlist                                 |
+| x$ps_digest_95th_percentile_by_avg_us         |
+| x$ps_digest_avg_latency_distribution          |
+| x$ps_schema_table_statistics_io               |
+| x$schema_flattened_keys                       |
+| x$schema_index_statistics                     |
+| x$schema_table_lock_waits                     |
+| x$schema_table_statistics                     |
+| x$schema_table_statistics_with_buffer         |
+| x$schema_tables_with_full_table_scans         |
+| x$session                                     |
+| x$statement_analysis                          |
+| x$statements_with_errors_or_warnings          |
+| x$statements_with_full_table_scans            |
+| x$statements_with_runtimes_in_95th_percentile |
+| x$statements_with_sorting                     |
+| x$statements_with_temp_tables                 |
+| x$user_summary                                |
+| x$user_summary_by_file_io                     |
+| x$user_summary_by_file_io_type                |
+| x$user_summary_by_stages                      |
+| x$user_summary_by_statement_latency           |
+| x$user_summary_by_statement_type              |
+| x$wait_classes_global_by_avg_latency          |
+| x$wait_classes_global_by_latency              |
+| x$waits_by_host_by_latency                    |
+| x$waits_by_user_by_latency                    |
+| x$waits_global_by_latency                     |
++-----------------------------------------------+
+103 rows in set (0.14 sec)
+
+*****1*****
+
+mysql> select * from productions;
++--------------+----------------------------+-----------+-----------+------------------+
+| productionid | productionname             | address   | COPYRIGHT | Ownername        |
++--------------+----------------------------+-----------+-----------+------------------+
+|         9091 | Arkamediaworks             | Hyderabad |      2001 | Shobu Yarlagadda |
+|         8892 | Lyca Productions           | chennai   |      2014 | Subaskaran       |
+|         1010 | Hari Om ENtertainment      | mumbai    |      2008 | Akshay Kumar     |
+|         1988 | Red Chillies Entertainment | mumbai    |      2003 | Shah Ruck        |
+|         1899 | Viacom 18 Stdios           | mumbai    |      2008 | Ajit Andhare     |
+|         7882 | DVV Entertainments         | hyderabad |      1993 | DVV Danayya      |
+|         6773 | Hombale Flims              | bangalore |      1995 | Vijay            |
+|         7682 | Mythri Movies Makers       | hyberabad |      2015 | Naveen Yarneni   |
+|         1854 | Jungles Pictures           | mumbai    |      2014 | Vineeth Jain     |
+|         2341 | CRM                        | bangalore |      2017 | Monohar          |
+|         1111 | STP                        | chennai   |      2018 | Sree             |
++--------------+----------------------------+-----------+-----------+------------------+
+11 rows in set (0.07 sec)
+
+
+*****2*****
+
+mysql> select * from movie;
++---------+------------------------+---------------+------------------+--------------+----------+--------+-----------------+--------------+
+| movieid | moviename              | heroname      | Heronie          | releaseddate | language | length | movietype       | productionid |
++---------+------------------------+---------------+------------------+--------------+----------+--------+-----------------+--------------+
+|     201 | Bahubali-The Beginning | Prabhas       | Tamannah         | 2010-07-15   | Telugu   |     21 | Drama Fantasy   |         9091 |
+|     501 | 2.0                    | Rajnikanth    | Amy              | 2029-11-18   | Tamil    |     20 | Scientific      |         8892 |
+|     577 | Aval                   | Siddharth     | Andrea           | 0003-11-17   | Tamil    |     14 | Horror          |         1899 |
+|     101 | Holiday                | Akshay Kumar  | Sonakshi         | 0006-06-14   | Hindi    |     15 | Crime Thriller  |         1010 |
+|     151 | Zero                   | Shah ruck     | Katrina Kaif     | 2021-12-18   | Hindi    |     16 | Scientific      |         1988 |
+|     131 | Padmavaat              | Shahid Kapoor | Deepika Padukone | 2025-01-18   | Hindi    |     21 | Drama Epic      |         1899 |
+|     146 | Andhadhun              | Ayushmann     | Radika Apte      | 0005-10-18   | Hindi    |     16 | Crime Thriller  |         1899 |
+|     231 | Bharath Ane nenu       | Mahesh Babu   | Kiara            | 2020-04-18   | Telugu   |     15 | Thriller        |         7882 |
+|     244 | Gruham                 | Siddharth     | Andrea           | 0000-00-00   | Telugu   |     14 | Horror          |         1899 |
+|     337 | K G F chapter 1        | Yash          | Srinithi Shetty  | 2021-12-18   | Kannada  |     21 | Action Thriller |         6773 |
+|     224 | Rangasthalam           | Ram Charan    | Samatha          | 2030-03-18   | Telugu   |     17 | Drama Period    |         7682 |
+|     136 | Badhaai Ho             | Ayushmann     | Neena            | 2018-10-18   | Hindi    |     14 | Drama Comdey    |         1854 |
+|     441 | The Villain            | Sudeep        | Amy              | 2018-10-18   | Kannada  |     16 | Drama           |         2341 |
+|     206 | Maryada Ramanna        | Sunil         | Saloni           | 2023-07-10   | Telugu   |     19 | Drama           |         9091 |
+|     211 | Khaidi No. 150         | chiranjeevi   | Kajal            | 2011-01-17   | Telugu   |     20 | Drama Thriller  |         8892 |
+|     188 | Rangoon                | Saif Ali Khan | Kangana          | 2024-02-17   | Hindi    |     15 | Drama           |         1899 |
+|     189 | The House Next Door    | Siddharth     | Andrea           | 2010-11-17   | Hindi    |     14 | Horror          |         1899 |
+|     267 | Anaganaga O Dheerudu   | Siddharth     | Shruthi          | 2014-01-14   | Telugu   |     16 | Fantasy         |         9091 |
++---------+------------------------+---------------+------------------+--------------+----------+--------+-----------------+--------------+
+18 rows in set (0.00 sec)
+
+
+*****3*****
+
+mysql> select moviename from movie where movietype like "Drama %";
++------------------------+
+| moviename              |
++------------------------+
+| Bahubali-The Beginning |
+| Padmavaat              |
+| Rangasthalam           |
+| Badhaai Ho             |
+| Khaidi No. 150         |
++------------------------+
+5 rows in set (0.02 sec)
+
+
+*****4*****
+
+mysql> select moviename from movie where heroname="Ayushmann";
++------------+
+| moviename  |
++------------+
+| Andhadhun  |
+| Badhaai Ho |
++------------+
+2 rows in set (0.02 sec)
+
+
+*****5*****
+
+mysql> select count(moviename) from movie where length>18;
++------------------+
+| count(moviename) |
++------------------+
+|                6 |
++------------------+
+1 row in set (0.02 sec)
+
+
+
+*****6*****
+
+mysql> select * from movie where length =(select min(length) from movie);
++---------+---------------------+-----------+---------+--------------+----------+--------+--------------+--------------+
+| movieid | moviename           | heroname  | Heronie | releaseddate | language | length | movietype    | productionid |
++---------+---------------------+-----------+---------+--------------+----------+--------+--------------+--------------+
+|     577 | Aval                | Siddharth | Andrea  | 0003-11-17   | Tamil    |     14 | Horror       |         1899 |
+|     244 | Gruham              | Siddharth | Andrea  | 0000-00-00   | Telugu   |     14 | Horror       |         1899 |
+|     136 | Badhaai Ho          | Ayushmann | Neena   | 2018-10-18   | Hindi    |     14 | Drama Comdey |         1854 |
+|     189 | The House Next Door | Siddharth | Andrea  | 2010-11-17   | Hindi    |     14 | Horror       |         1899 |
++---------+---------------------+-----------+---------+--------------+----------+--------+--------------+--------------+
+4 rows in set (0.01 sec)
+
+
+
+*****7*****
+
+mysql> select * from movie where language like "T%";
++---------+------------------------+-------------+----------+--------------+----------+--------+----------------+--------------+
+| movieid | moviename              | heroname    | Heronie  | releaseddate | language | length | movietype      | productionid |
++---------+------------------------+-------------+----------+--------------+----------+--------+----------------+--------------+
+|     201 | Bahubali-The Beginning | Prabhas     | Tamannah | 2010-07-15   | Telugu   |     21 | Drama Fantasy  |         9091 |
+|     501 | 2.0                    | Rajnikanth  | Amy      | 2029-11-18   | Tamil    |     20 | Scientific     |         8892 |
+|     577 | Aval                   | Siddharth   | Andrea   | 0003-11-17   | Tamil    |     14 | Horror         |         1899 |
+|     231 | Bharath Ane nenu       | Mahesh Babu | Kiara    | 2020-04-18   | Telugu   |     15 | Thriller       |         7882 |
+|     244 | Gruham                 | Siddharth   | Andrea   | 0000-00-00   | Telugu   |     14 | Horror         |         1899 |
+|     224 | Rangasthalam           | Ram Charan  | Samatha  | 2030-03-18   | Telugu   |     17 | Drama Period   |         7682 |
+|     206 | Maryada Ramanna        | Sunil       | Saloni   | 2023-07-10   | Telugu   |     19 | Drama          |         9091 |
+|     211 | Khaidi No. 150         | chiranjeevi | Kajal    | 2011-01-17   | Telugu   |     20 | Drama Thriller |         8892 |
+|     267 | Anaganaga O Dheerudu   | Siddharth   | Shruthi  | 2014-01-14   | Telugu   |     16 | Fantasy        |         9091 |
++---------+------------------------+-------------+----------+--------------+----------+--------+----------------+--------------+
+9 rows in set (0.00 sec)
+
+
+*****8*****
+
+mysql> select moviename,heroname,Heronie from movie where length=(select max(length) from movie);
++------------------------+---------------+------------------+
+| moviename              | heroname      | Heronie          |
++------------------------+---------------+------------------+
+| Bahubali-The Beginning | Prabhas       | Tamannah         |
+| Padmavaat              | Shahid Kapoor | Deepika Padukone |
+| K G F chapter 1        | Yash          | Srinithi Shetty  |
++------------------------+---------------+------------------+
+3 rows in set (0.00 sec)
+
+
+
+*****9*****
+
+
+mysql> select moviename,heroname,Heronie from movie where releaseddate> "2018-03-15";
++------------------+---------------+------------------+
+| moviename        | heroname      | Heronie          |
++------------------+---------------+------------------+
+| 2.0              | Rajnikanth    | Amy              |
+| Zero             | Shah ruck     | Katrina Kaif     |
+| Padmavaat        | Shahid Kapoor | Deepika Padukone |
+| Bharath Ane nenu | Mahesh Babu   | Kiara            |
+| K G F chapter 1  | Yash          | Srinithi Shetty  |
+| Rangasthalam     | Ram Charan    | Samatha          |
+| Badhaai Ho       | Ayushmann     | Neena            |
+| The Villain      | Sudeep        | Amy              |
+| Maryada Ramanna  | Sunil         | Saloni           |
+| Rangoon          | Saif Ali Khan | Kangana          |
++------------------+---------------+------------------+
+10 rows in set (0.00 sec)
+
+
+
+*****10*****
+
+mysql> select releaseddate  from movie where moviename="Zero";
++--------------+
+| releaseddate |
++--------------+
+| 2021-12-18   |
++--------------+
+1 row in set (0.00 sec)
+
+
+
+*****11*****
+
+mysql> select heroname from movie where Heronie="Amy";
++------------+
+| heroname   |
++------------+
+| Rajnikanth |
+| Sudeep     |
++------------+
+2 rows in set (0.00 sec)
+
+
+
+*****12*****
+
+mysql> select count(moviename) from movie where MONTH(releaseddate)="10";
++------------------+
+| count(moviename) |
++------------------+
+|                3 |
++------------------+
+1 row in set (0.03 sec)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*****1*****
+
+mysql> select productions.productionname, productions.productionid, count(moviename) as total from productions INNER JOIN movie ON movie.productionid= productions.productionid group by productionid;
++----------------------------+--------------+-------+
+| productionname             | productionid | total |
++----------------------------+--------------+-------+
+| Arkamediaworks             |         9091 |     3 |
+| Lyca Productions           |         8892 |     2 |
+| Viacom 18 Stdios           |         1899 |     6 |
+| Hari Om ENtertainment      |         1010 |     1 |
+| Red Chillies Entertainment |         1988 |     1 |
+| DVV Entertainments         |         7882 |     1 |
+| Hombale Flims              |         6773 |     1 |
+| Mythri Movies Makers       |         7682 |     1 |
+| Jungles Pictures           |         1854 |     1 |
+| CRM                        |         2341 |     1 |
++----------------------------+--------------+-------+
+10 rows in set (0.00 sec)
+
+*****2*****
+
+mysql> SELECT productions.ProductionName, productions.Ownername
+    ->  FROM productions
+    -> inner JOIN movie ON movie.productionid=productions.productionid group by movie.productionid having count(moviename)>2;
++------------------+------------------+
+| ProductionName   | Ownername        |
++------------------+------------------+
+| Arkamediaworks   | Shobu Yarlagadda |
+| Viacom 18 Stdios | Ajit Andhare     |
++------------------+------------------+
+2 rows in set (0.00 sec)
+
+
+
+*****3*****
+
+mysql> select p.productionid ,p.ownername, count(m.productionid) from productions as p  join movie as m ON p.productionid = m.productionid group by m.productionid ORDER BY count(m.productionid) DESC LIMIT 1;
++--------------+--------------+-----------------------+
+| productionid | ownername    | count(m.productionid) |
++--------------+--------------+-----------------------+
+|         1899 | Ajit Andhare |                     6 |
++--------------+--------------+-----------------------+
+1 row in set (0.00 sec)
+
+
+
+*****4*****
+
+mysql> SELECT movie.moviename,movie.Heroname,productions.productionName from movie join productions ON movie.productionid=productions.productionid WHERE productions.Ownername="Ajit Andhare";
++---------------------+---------------+------------------+
+| moviename           | Heroname      | productionName   |
++---------------------+---------------+------------------+
+| Aval                | Siddharth     | Viacom 18 Stdios |
+| Padmavaat           | Shahid Kapoor | Viacom 18 Stdios |
+| Andhadhun           | Ayushmann     | Viacom 18 Stdios |
+| Gruham              | Siddharth     | Viacom 18 Stdios |
+| Rangoon             | Saif Ali Khan | Viacom 18 Stdios |
+| The House Next Door | Siddharth     | Viacom 18 Stdios |
++---------------------+---------------+------------------+
+6 rows in set (0.00 sec)
+
+
+
+*****5*****
+
+mysql> SELECT movie.moviename,movie.Heroname from movie join productions ON movie.productionid=productions.productionid WHERE movie.productionid like"%82";
++------------------+-------------+
+| moviename        | Heroname    |
++------------------+-------------+
+| Bharath Ane nenu | Mahesh Babu |
+| Rangasthalam     | Ram Charan  |
++------------------+-------------+
+2 rows in set (0.00 sec)
+
+
+*****6*****
+
+SELECT productions.productionname,productions.ownername FROM productions LEFT JOIN movie ON movie.productionid = productions.productionid WHERE moviename IS NULL;
++----------------+-----------+
+| productionname | ownername |
++----------------+-----------+
+| STP            | Sree      |
++----------------+-----------+
+1 row in set (0.00 sec)
+
+
+*****7*****
+
+mysql> SELECT movie.moviename,movie.Heroname,productions.productionName from movie join productions ON movie.productionid=productions.productionid WHERE NOT language= "Hindi";
++------------------------+-------------+----------------------+
+| moviename              | Heroname    | productionName       |
++------------------------+-------------+----------------------+
+| Bahubali-The Beginning | Prabhas     | Arkamediaworks       |
+| 2.0                    | Rajnikanth  | Lyca Productions     |
+| Aval                   | Siddharth   | Viacom 18 Stdios     |
+| Bharath Ane nenu       | Mahesh Babu | DVV Entertainments   |
+| Gruham                 | Siddharth   | Viacom 18 Stdios     |
+| K G F chapter 1        | Yash        | Hombale Flims        |
+| Rangasthalam           | Ram Charan  | Mythri Movies Makers |
+| The Villain            | Sudeep      | CRM                  |
+| Maryada Ramanna        | Sunil       | Arkamediaworks       |
+| Khaidi No. 150         | chiranjeevi | Lyca Productions     |
+| Anaganaga O Dheerudu   | Siddharth   | Arkamediaworks       |
++------------------------+-------------+----------------------+
+11 rows in set (0.00 sec)
+
+
+
+
+*****8*****
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*****9*****
+
+ select distinct Heroname ,Language , count(Heroname) as result from  movie group by(Language) order by (result) desc limit 1;
++----------+----------+--------+
+| Heroname | Language | result |
++----------+----------+--------+
+| Prabhas  | Telugu   |      7 |
++----------+----------+--------+
+1 row in set (0.02 sec)
+
+
+
+*****10*****
+
+select Distinct p.Productionname,p.Ownername ,count(p.Productionname) as counter  from  movie as m right join productions as p ON  m.productionid =p.productionid  group by(m.language) order by(counter) desc limit 1;
++----------------+------------------+---------+
+| Productionname | Ownername        | counter |
++----------------+------------------+---------+
+| Arkamediaworks | Shobu Yarlagadda |       7 |
++----------------+------------------+---------+
+1 row in set (0.02 sec)
+
+
+
+*****11*****
+
+select p.Ownername ,p.Productionname from  movie as m right join productions as p ON  m.productionid =p.productionid where m.moviename is  null ;
++-----------+----------------+
+| Ownername | Productionname |
++-----------+----------------+
+| Sree      | STP            |
++-----------+----------------+
+1 row in set (0.00 sec)
